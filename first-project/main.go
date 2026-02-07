@@ -2,44 +2,46 @@ package main
 
 import "fmt"
 
-// print a value
-func add (num1 int, num2 int) {
+func printWelcomeMessage() {
+	fmt.Println("Welcome to the application")
+}
+
+func getUserName() string {
+	// Get user name as input
+	var name string
+	fmt.Println("Enter your name : ")
+	fmt.Scanln(&name)
+	return name
+}
+
+func getTwoNumbers() (int, int) { 
+	var num1 int
+	var num2 int
+	fmt.Println("Enter first number:")
+	fmt.Scanln(&num1)
+	fmt.Println("Enter second number:")
+	fmt.Scanln(&num2)
+	return num1, num2
+}
+
+func add(num1 int, num2 int) (int) {
 	sum := num1 + num2
-	fmt.Println(sum)
+	return sum
 }
 
-// return value
-func findProduct (num1 int, num2 int) int {
-	result := num1 * num2
-	return result
+func display(name string, sum int) {
+	fmt.Println("Hello", name)
+	fmt.Println("Summation = ", sum)
+} 
+
+func printGoodByeMessage () {
+	fmt.Println("Thank you for using the application")
 }
 
-func getNumbers (num1 int, num2 int) (int, int) {
-	sum := num1 + num2
-	product := num1 * num2
-	return sum , product
-}
-
-func printSomething () {
-	fmt.Println("Education must be free")
-}
-
-func sayHello (name string) {
-	fmt.Println("Welcome to the Golang course, ", name)
-}
-
-func main() {
-
-	// function
-	var a int = 10
-	b := 20
-	add (a, b)
-	product := findProduct(a, b)
-	fmt.Println(product)
-
-	p, q := getNumbers(a, b)
-	fmt.Println(p)
-	fmt.Println(q)
-	printSomething()
-	sayHello("Arman")
+func main () {
+	printWelcomeMessage()
+	name := getUserName()
+	num1, num2 := getTwoNumbers()
+	sum := add(num1, num2)
+	display(name, sum)
 }
