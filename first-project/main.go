@@ -19,6 +19,15 @@ func getNumbers (num1 int, num2 int) (int, int) {
 	product := num1 * num2
 	return sum , product
 }
+
+func printSomething () {
+	fmt.Println("Education must be free")
+}
+
+func sayHello (name string) {
+	fmt.Println("Welcome to the Golang course, ", name)
+}
+
 func main() {
 
 	// function
@@ -31,5 +40,6 @@ func main() {
 	p, q := getNumbers(a, b)
 	fmt.Println(p)
 	fmt.Println(q)
-
+	printSomething()
+	sayHello("Arman")
 }
