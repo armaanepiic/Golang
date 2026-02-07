@@ -28,4 +28,34 @@ func main() {
 	// const
 	const pi = 3.1416
 	fmt.Println(pi)
+
+	// condition
+	age := 20
+	sex := "male"
+
+	if(age > 60 || sex == "male") {
+		fmt.Println("You are ready to marry")
+	}
+
+	isPretty := false
+	if (!isPretty) {
+		fmt.Println("You are pretty")
+	}
+
+	day := "monday"
+
+	switch day {
+	case "friday" , "saturday": fmt.Println("Holiday")
+	case "monday" : fmt.Println("half office day")
+	default:
+		fmt.Printf("Office day")
+	}
+
+	// if(age > 18) {
+	// 	fmt.Println("You are ready for marriage")
+	// } else if (age == 18) {
+	// 	fmt.Println("you are just 18")
+	// } else {
+	// 	fmt.Println("you are teenager")
+	// }
 }
