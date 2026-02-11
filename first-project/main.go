@@ -2,17 +2,24 @@ package main
 
 import (
 	"fmt"
-	"example.com/mathlib"
 )
 
-var a = 20
-var b = 30
+var (
+	a = 10
+	b = 20
+)
 
+func add (x int, y int) {
+	res := x + y
+	printNum(res)
+} 
 
 func main() { 
-	fmt.Println("Showing custom package")
-	mathlib.Add(10, 20)
-	// mathlib.Money
+	add(a, b)
 }
 
-// go mod init example.com
+func printNum(num int) {
+	fmt.Println(num)
+}
+// when a function is called a memory will be allocated in the RAM
+// after finishing the execution the memory allocated will be gone
