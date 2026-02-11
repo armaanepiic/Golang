@@ -1,19 +1,18 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"example.com/mathlib"
+)
 
 var a = 20
 var b = 30
 
-func add(x int, y int) {
-	z := x + y
-	fmt.Println(z)
+
+func main() { 
+	fmt.Println("Showing custom package")
+	mathlib.Add(10, 20)
+	// mathlib.Money
 }
 
-func main() {
-	var p = 30
-	var q = 40
-	add(p, q)
-	add(a, b)
-	add(a, p)
-}
+// go mod init example.com
