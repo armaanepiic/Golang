@@ -5,12 +5,13 @@ import "fmt"
 // init function
 // you can't call this function
 // computer call this automatically
-
+var a = 10
 func main() {
-	fmt.Println("Hello init function")
+	fmt.Println(a)
 	// init() xxxx
 }
 
 func init() {
-	fmt.Println("I am the first function that is executed first")
+	fmt.Println(a)
+	a = 20
 }
