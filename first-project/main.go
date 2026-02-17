@@ -2,11 +2,15 @@ package main
 
 import "fmt"
 
-// standard function
-func add(a, b int) {
-	fmt.Println(a + b)
-}
+// init function
+// you can't call this function
+// computer call this automatically
 
 func main() {
-	add(10, 30)
+	fmt.Println("Hello init function")
+	// init() xxxx
+}
+
+func init() {
+	fmt.Println("I am the first function that is executed first")
 }
