@@ -2,16 +2,13 @@ package main
 
 import "fmt"
 
-// init function
-// you can't call this function
-// computer call this automatically
-var a = 10
-func main() {
-	fmt.Println(a)
-	// init() xxxx
-}
+// anonymous function = function without name
+// IIFE = immediately invoked function expression
 
-func init() {
-	fmt.Println(a)
-	a = 20
+func main() {
+	func (a, b int) {
+		fmt.Println("I am a anonymous function")
+		c := a + b
+		fmt.Println(c)
+	}(5, 9)
 }
