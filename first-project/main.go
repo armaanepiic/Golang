@@ -2,13 +2,11 @@ package main
 
 import "fmt"
 
-var a = 10
+// standard function
+func add(a, b int) {
+	fmt.Println(a + b)
+}
 
 func main() {
-	age := 30
-	if age > 18 {
-		a := 47
-		fmt.Println(a)
-	}
-	fmt.Println(a)
+	add(10, 30)
 }
