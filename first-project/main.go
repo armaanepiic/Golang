@@ -5,10 +5,17 @@ import "fmt"
 // anonymous function = function without name
 // IIFE = immediately invoked function expression
 
+// function expression or assign function in variable
+
 func main() {
-	func (a, b int) {
+	add := func (a, b int) {
 		fmt.Println("I am a anonymous function")
 		c := a + b
 		fmt.Println(c)
-	}(5, 9)
+	}
+	add(3, 8)
+}
+
+func init() {
+	fmt.Println("i am init function")
 }
