@@ -2,20 +2,24 @@ package main
 
 import "fmt"
 
-// anonymous function = function without name
-// IIFE = immediately invoked function expression
+// arameter vs argument
+// sends as an arguments
+// recieves as a parameter
 
-// function expression or assign function in variable
-
+func add(a int, b int) { // parameter => a, b
+	c := a + b
+	fmt.Println(c)
+}
 func main() {
-	add := func (a, b int) {
-		fmt.Println("I am a anonymous function")
-		c := a + b
-		fmt.Println(c)
-	}
-	add(3, 8)
+	add(2, 5) // argumants => 2, 5
 }
 
-func init() {
-	fmt.Println("i am init function")
-}
+/*
+1. parameter vs argument
+2. first order function
+	i. standard function or named function
+	ii. anonymous function
+	iii. IIFE
+	iv. function expression
+3.
+*/
