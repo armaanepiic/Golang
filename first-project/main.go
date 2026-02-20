@@ -27,6 +27,9 @@ func main() {
 	sum(10, 20)
 	sum2 := processOperation(1, 3, add)
 	sum2(4, 8)
+
+	// a := a
+	// fmt.Println(a)
 }
 
 /*
@@ -36,8 +39,9 @@ func main() {
 	ii. anonymous function
 	iii. IIFE
 	iv. function expression
-3. higher order function
+3. higher order function / first class function (treated as first class citizen)
 	// as it recieves a function => higher order function
 	// as it returns a function => higher order function
 4. callback function => when a func is passed to a higher order func
+5. first class citizen => (variable assign data)
 */
