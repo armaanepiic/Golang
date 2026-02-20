@@ -1674,34 +1674,6 @@ saveData() // Only this one eventually executes
 | **Higher-Order Functions** | Accept/return functions | Building abstractions, reusable logic |
 | **Callbacks** | Functions passed as arguments | Event handling, async operations |
 | **First-Class Citizens** | Functions as values | Flexible, dynamic behavior |
-
-### The Power of Functional Programming in Go
-
-While Go is not a pure functional language, it provides enough functional features to:
-
-- ✅ Write cleaner, more modular code
-- ✅ Reduce code duplication
-- ✅ Create flexible, extensible systems
-- ✅ Implement powerful design patterns
-- ✅ Build composable, testable functions
-
-### Next Steps
-
-1. **Practice**: Implement map, filter, and reduce functions
-2. **Experiment**: Build middleware systems or validation frameworks
-3. **Refactor**: Convert imperative code to functional style
-4. **Explore**: Study functional patterns in popular Go libraries
-5. **Combine**: Mix functional and object-oriented approaches
-
----
-
-## Additional Resources
-
-- [Go Official Documentation](https://go.dev/doc/)
-- [Effective Go](https://go.dev/doc/effective_go)
-- [Go by Example - Functions](https://gobyexample.com/functions)
-- [Functional Options Pattern](https://dave.cheney.net/2014/10/17/functional-options-for-friendly-apis)
-
 ---
 
 **Happy Coding! 🚀**
