@@ -1,17 +1,23 @@
 package main
 
-import "fmt"
+import "fmt" 
 
 // arameter vs argument
 // sends as an arguments
 // recieves as a parameter
 
-func add(a int, b int) { // parameter => a, b
-	c := a + b
-	fmt.Println(c)
+// as it recieves a function => higher order function
+func processOperation(a int, b int, op func (p int, q int)) {
+	op(a, b)
 }
+
+func add(x int, y int) { // parameter => a, b
+	z := x + y
+	fmt.Println(z)
+}
+
 func main() {
-	add(2, 5) // argumants => 2, 5
+	processOperation(2, 5, add)
 }
 
 /*
@@ -21,5 +27,5 @@ func main() {
 	ii. anonymous function
 	iii. IIFE
 	iv. function expression
-3.
+3. higher order function
 */
