@@ -7,17 +7,26 @@ import "fmt"
 // recieves as a parameter
 
 // as it recieves a function => higher order function
-func processOperation(a int, b int, op func (p int, q int)) {
+// as it returns a function => higher order function
+
+func processOperation (a int, b int, op func(p int, q int)) func (x int, y int) {
 	op(a, b)
+	return add
 }
 
+func call () func (x int, y int) {
+	return add
+}
 func add(x int, y int) { // parameter => a, b
 	z := x + y
 	fmt.Println(z)
 }
 
 func main() {
-	processOperation(2, 5, add)
+	sum := call() // func expression
+	sum(10, 20)
+	sum2 := processOperation(1, 3, add)
+	sum2(4, 8)
 }
 
 /*
@@ -28,4 +37,7 @@ func main() {
 	iii. IIFE
 	iv. function expression
 3. higher order function
+	// as it recieves a function => higher order function
+	// as it returns a function => higher order function
+4. callback function => when a func is passed to a higher order func
 */
