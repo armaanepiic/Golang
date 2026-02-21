@@ -1,47 +1,55 @@
 package main
 
-import "fmt" 
+import "fmt"
 
-// arameter vs argument
-// sends as an arguments
-// recieves as a parameter
+const a = 10
+var p = 100
 
-// as it recieves a function => higher order function
-// as it returns a function => higher order function
 
-func processOperation (a int, b int, op func(p int, q int)) func (x int, y int) {
-	op(a, b)
-	return add
-}
+func call() {
+	add := func(x int, y int) {
+		z := x + y
+		fmt.Println(z)
+	}
 
-func call () func (x int, y int) {
-	return add
-}
-func add(x int, y int) { // parameter => a, b
-	z := x + y
-	fmt.Println(z)
+	add(5, 6)
+	add(p, a)
 }
 
 func main() {
-	sum := call() // func expression
-	sum(10, 20)
-	sum2 := processOperation(1, 3, add)
-	sum2(4, 8)
+	call()
+	// a := 12 // shadowing
+	fmt.Println(a)
+}
 
-	// a := a
-	// fmt.Println(a)
+func init () {
+	fmt.Println("I am init function")
 }
 
 /*
-1. parameter vs argument
-2. first order function
-	i. standard function or named function
-	ii. anonymous function
-	iii. IIFE
-	iv. function expression
-3. higher order function / first class function (treated as first class citizen)
-	// as it recieves a function => higher order function
-	// as it returns a function => higher order function
-4. callback function => when a func is passed to a higher order func
-5. first class citizen => (variable assign data)
+go file run process:
+	2 phases
+	  1. compilation phase -> binary file
+	  2. execution phase
+
+
+	  go run main.go => compile it => main => ./main
+	  go build main.go => compile it => main
+*/
+
+/*
+	*** Binary File ***
+
+*/
+
+/*
+	*** compilation phase ***
+	*** code segment ***
+
+		const a = 10
+		call function () {...}
+		add function () {...}
+		main function () {...}
+		init function () {...}
+		
 */
