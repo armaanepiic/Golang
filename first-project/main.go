@@ -1,55 +1,55 @@
 package main
 
 import "fmt"
-
 const a = 10
-var p = 100
+var p = 100 // data segment
 
+func outer() func() {
+	money := 100
+	age := 30
+
+	fmt.Println("Age =", age)
+
+	show := func() {
+		money = money + a + p 
+		fmt.Println(money)
+	}
+	return show // in this line money and show func will be stored in heap
+}
 
 func call() {
-	add := func(x int, y int) {
-		z := x + y
-		fmt.Println(z)
-	}
+	incr1 := outer()
+	incr1()
+	incr1()
 
-	add(5, 6)
-	add(p, a)
+	incr2 := outer()
+	incr2()
+	incr2()
 }
 
 func main() {
 	call()
-	// a := 12 // shadowing
-	fmt.Println(a)
 }
 
-func init () {
+func init() {
 	fmt.Println("I am init function")
 }
 
 /*
-go file run process:
-	2 phases
-	  1. compilation phase -> binary file
-	  2. execution phase
 
 
-	  go run main.go => compile it => main => ./main
-	  go build main.go => compile it => main
-*/
+2 phases =>
+	1. compilation phase (compile time)
+	2. execution phase (run time)
 
-/*
-	*** Binary File ***
+	1** compile phase **
+	** code segment **
+	a = 10
+	outer = func() {...}
+	outer anonymous1 = func() {...}
+	call = func() {...}
+	main = func() {...}
+	init = func() {...}
 
-*/
-
-/*
-	*** compilation phase ***
-	*** code segment ***
-
-		const a = 10
-		call function () {...}
-		add function () {...}
-		main function () {...}
-		init function () {...}
-		
+	2** execution phase **
 */
