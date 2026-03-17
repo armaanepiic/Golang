@@ -23,7 +23,43 @@ func sum(a int, b int) (result int) {
 	return
 }
 
+func calculate() (result int) {
+
+	fmt.Println("First", result)
+
+	show := func() {
+		result = result + 10
+		fmt.Println("defer",result)
+	}
+	defer show()
+
+	result = 5
+	fmt.Println("Second", result)
+
+	return
+}
+
+func calc() int {
+
+	result := 0
+	fmt.Println("First", result)
+
+	show := func() {
+		result = result + 10
+		fmt.Println("defer",result)
+	}
+	defer show()
+
+	result = 5
+	fmt.Println("Second", result)
+
+	return result
+}
+
 func main() {
-	res := sum(3, 4)
-	fmt.Println(res)
+	a := calculate()
+	fmt.Println("main first", a)
+
+	b := calc()
+	fmt.Println("main second", b)
 }
