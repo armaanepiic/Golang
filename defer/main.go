@@ -18,6 +18,12 @@ func a() {
 
 }
 
+func sum(a int, b int) (result int) {
+	result = a + b
+	return
+}
+
 func main() {
-	a()
+	res := sum(3, 4)
+	fmt.Println(res)
 }
