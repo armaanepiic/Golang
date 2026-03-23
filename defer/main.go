@@ -34,32 +34,38 @@ func calculate() (result int) {
 	defer show()
 
 	result = 5
+
+	p := func(a int) {
+		fmt.Println("ami", a)
+	}
+
+	defer p(result)
+
+	defer fmt.Println(result)
+	
 	fmt.Println("Second", result)
+
+	defer fmt.Println(5)
 
 	return
 }
 
-func calc() int {
-
-	result := 0
-	fmt.Println("First", result)
-
-	show := func() {
-		result = result + 10
-		fmt.Println("defer",result)
-	}
-	defer show()
-
-	result = 5
-	fmt.Println("Second", result)
-
-	return result
-}
 
 func main() {
 	a := calculate()
 	fmt.Println("main first", a)
-
-	b := calc()
-	fmt.Println("main second", b)
 }
+
+/*
+
+=> named return type
+	1. all codes executes
+	2. defer function stored in the magic box
+	3. return -> all defer func executed
+	4. return values of named variable
+=> normal return type
+	1. all codes executes
+	2. defer function stored in the magic box
+	3. return values are evaluated at this time
+	4. all defer functions are executed
+*/
